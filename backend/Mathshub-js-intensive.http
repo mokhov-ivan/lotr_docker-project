@@ -1,0 +1,38 @@
+### Basic health check
+GET localhost:8000
+
+### Quiz endpoint
+GET localhost:8000/quiz
+
+### SVG serving
+GET localhost:8000/0.svg?id=0
+
+### Send POST request with right answer
+POST localhost:8000/check_answer
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Thorin",
+  "age": 195
+}
+
+### Send POST request with incorrect answer
+POST localhost:8000/check_answer
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Thorin",
+  "age": 10
+}
+
+### Send POST request with right answer and age as string
+POST localhost:8000/check_answer
+Content-Type: application/json
+
+{
+  "id": 12,
+  "name": "Bombur",
+  "age": "Unknown"
+}
